@@ -4,21 +4,21 @@
 #include <vector>
 using namespace std;
 
-void input_from_user(void) {
+
+int main() {
+  //input_from_user();
   while (true) {
     string a;
     cout << "Saikat@Saikat $ ";
-    cin >> a;
+    getline(cin, a);
     stringstream ss(a);
     string toc;
     vector<string> tocs;
     while (ss >> toc) {
       tocs.push_back(toc);
+      break;
     }
     cout << tocs[0] << endl;
   }
-}
-int main() {
-  input_from_user();
   return 0;
 }

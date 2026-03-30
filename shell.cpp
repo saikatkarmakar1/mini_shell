@@ -17,10 +17,10 @@ int main() {
     vector<string> tocs;
     while (ss >> toc) {
       tocs.push_back(toc);
-      break;
+      // break;
     }
     string final_command = "";
-    for (size_t a = 0; a < tocs.size(); ++a) {
+    for (size_t a = 0; a <= tocs.size(); ++a) {
       final_command += tocs[a];
       if (a < tocs.size() - 1) {
         final_command += " ";

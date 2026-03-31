@@ -41,11 +41,16 @@ int main() {
     return 1;
   }
 
+  struct stat info;
   while ((entry = readdir(dir)) != NULL) {
     // cout << entry->d_name << endl;
     a += entry->d_name;
     a += " \n";
+    cout << entry->d_name << endl;
     b.push_back(entry->d_name);
+    if (stat(entry->d_name, &info) == 0) {
+      cout << info.st_size << endl;
+    }
   }
   cout << a << endl;
   closedir(dir);

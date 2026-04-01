@@ -52,6 +52,9 @@ int main() {
     if (fs::exists("./" + tocs[0])) {
       std::cout << "[Found locally] Running " << tocs[0] << "...\n";
       execute_file("./" + tocs[0]);
+    } else if (tocs[0] == "exit") {
+      cout << "Thank You for comming my kingdom ;) \n" << endl;
+      break;
     } else {
       system(final_command.c_str());
     }

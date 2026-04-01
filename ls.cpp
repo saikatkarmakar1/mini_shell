@@ -46,16 +46,20 @@ int main() {
     // cout << entry->d_name << endl;
     a += entry->d_name;
     a += " \n";
-    cout << entry->d_name << endl;
+    // if (a == ".", a == "..") {
+    //   continue;
+    // }
+    cout << entry->d_name << " ";
     b.push_back(entry->d_name);
     if (stat(entry->d_name, &info) == 0) {
-      cout << info.st_size << endl;
+      double mb = info.st_size / (1024.0);
+      cout << " --->  " << mb << " Kb .\n" << endl;
     }
   }
-  cout << a << endl;
+  // cout << a << endl;
   closedir(dir);
   fs::path main_path = filesystem::current_path();
-  findsize(main_path);
+  // findsize(main_path);
 
   return 0;
 }
